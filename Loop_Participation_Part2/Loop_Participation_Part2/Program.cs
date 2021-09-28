@@ -26,8 +26,17 @@ namespace Loop_Participation_Part2
             double average = 0;
             for (int i = 1; i <= bankaccounts; i++)
             {
-                Console.WriteLine($"Enter the amount for the {i} account. >>");
-                string amountAsString = Console.ReadLine();
+                string amountAsString;
+                do
+                {
+                    Console.WriteLine($"Enter the amount for the {i} account. >>");
+                    amountAsString = Console.ReadLine();
+                    if (double.TryParse(amountAsString, out amount) == false)
+                    {
+                        Console.WriteLine($"{amountAsString} is an invalid input. Please enter the correct amount. >>");
+                    }
+                } while (double.TryParse(amountAsString, out amount) == false);
+
                 amount = amount+ Convert.ToDouble(amountAsString);
                 average = amount / i;
             }
