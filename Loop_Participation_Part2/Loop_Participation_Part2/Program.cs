@@ -34,18 +34,18 @@ namespace Loop_Participation_Part2
 
 
             Console.WriteLine($"Total of all accounts");
-            Console.WriteLine(amount);
+            Console.WriteLine(amount.ToString("C2"));
             
             Console.WriteLine("Average of all accounts");
             if (average >= 5000)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(average);
+                Console.WriteLine(average.ToString("C2"));
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(average);
+                Console.WriteLine(average.ToString("C2"));
             }
 
 
